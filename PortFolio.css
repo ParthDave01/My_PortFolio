@@ -1,0 +1,245 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background-color: #121212;
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Loading Animation */
+#loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    z-index: 10;
+}
+
+/* Navbar */
+#navbar {
+    position: fixed; /* Fix navbar at the top */
+    top: 0;
+    right: 0; /* Align navbar to the right */
+    width: 100%;
+    z-index: 2;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: flex-end; /* Align content to the right */
+    align-items: center;
+}
+
+/* Hamburger Menu Icon */
+.menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    color: white;
+}
+
+#menu-toggle {
+    display: none; /* Hide the checkbox */
+}
+
+/* Navbar Links */
+#nav {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav li {
+    position: relative;
+    margin: 0 10px;
+}
+
+#nav li a {
+    padding: 15px 20px;
+    color: whitesmoke;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+#nav li a:hover {
+    color: rgba(255, 99, 71, 0.8);
+}
+
+/* Dropdown Styling */
+#profiles ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    margin: 0;
+    list-style-type: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+    border-radius: 5px;
+    min-width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#profiles:hover ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#profiles ul li {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+#profiles ul li a {
+    padding: 10px 15px;
+    color: whitesmoke;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+#profiles ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 99, 71, 0.8);
+}
+
+/* Main Content */
+#about {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Skills Section */
+#skills {
+    padding: 50px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.skill {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.skill:hover {
+    transform: scale(1.1);
+}
+
+.skill i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.skill p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Projects Section */
+#projects {
+    padding: 50px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.project-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Section */
+#contact {
+    padding: 50px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#contactForm input, #contactForm textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+#contactForm button {
+    align-self: flex-start;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Show Hamburger Menu Icon */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Hide Navbar Links by Default */
+    #nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 60px;
+        right: 0; /* Align dropdown to the right */
+    }
+
+    /* Show Navbar Links When Menu is Toggled */
+    #menu-toggle:checked ~ #nav {
+        display: flex;
+    }
+
+    /* Adjust Navbar Links for Mobile */
+    #nav li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    /* Adjust Main Content for Mobile */
+    #about h1 {
+        font-size: 2rem;
+    }
+    #about p {
+        font-size: 1rem;
+    }
+}
