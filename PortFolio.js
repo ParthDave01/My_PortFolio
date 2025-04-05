@@ -96,6 +96,19 @@ function initAnimations() {
             ease: 'power2.out'
         });
     });
+
+    // Photo hover animation
+    gsap.to('.profile-img', {
+        scrollTrigger: {
+            trigger: '.about-img',
+            start: 'top 75%',
+            toggleActions: 'play none none none'
+        },
+        duration: 0.8,
+        opacity: 1,
+        y: 0,
+        ease: 'back.out(1.2)'
+    });
 }
 
 // Three.js Background Animation (Optional)
